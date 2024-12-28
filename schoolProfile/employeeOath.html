@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap demo</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      @media (min-width: 1200px) {
+        .container,
+        .container-lg,
+        .container-md,
+        .container-sm,
+        .container-xl {
+          max-width: 1200px;
+        }
+      }
+      .tip {
+        width: 100%;
+        height: 30px;
+        line-height: 30px;
+        background-color: #1c77c9;
+        font-size: 12px;
+        color: #d5e9fb;
+      }
+      .top {
+        min-height: 480px;
+        width: 100%;
+        background: url(../assets/images/top_bj.jpg) no-repeat center top;
+        overflow: hidden;
+      }
+      .top > div {
+        margin: 7px auto;
+      }
+
+      .search {
+        width: 266px;
+        height: 36px;
+        line-height: 36px;
+        background: url(../assets/images/rq_bj.png) no-repeat;
+        margin-top: 40px;
+      }
+      .search .text_01 {
+        background: #000;
+        height: 34px;
+        line-height: 34px;
+        outline: none;
+        width: 200px;
+        color: #fff;
+        font-size: 12px;
+        background-color: transparent;
+        border: none;
+        padding-left: 15px;
+        float: left;
+      }
+      .search .images_02 {
+        float: right;
+        width: 36px;
+        height: 36px;
+        margin-right: 5px;
+        outline: none;
+      }
+      /* navbar */
+      .navbar {
+        font-size: 18px;
+        text-align: center;
+        height: 50px;
+      }
+      .home {
+        font-size: 18px;
+        color: #fff;
+      }
+      .navbar-nav a:focus {
+        background: #227ed1;
+        color: #fff;
+      }
+      .active {
+        background: #227ed1;
+        color: #fff;
+      }
+      .home a:hover {
+        background: #227ed1;
+        color: #fff;
+      }
+      .navbar a {
+        color: #fff;
+      }
+      .navbar li {
+        flex: 1;
+        width: 100%;
+      }
+      .navbar li:hover {
+        background: #227ed1;
+        color: #fff;
+      }
+      .navbar li:active {
+        background: #227ed1;
+        color: #fff;
+      }
+      .navbar-expand-lg .navbar-nav .nav-link {
+        padding-right: 0;
+        padding-left: 0;
+      }
+
+      /* banner */
+      .banner {
+        margin-top: 7px;
+      }
+      .banner .carousel-inner .carousel-item {
+        height: 320px;
+      }
+      .banner .carousel-inner .carousel-item img {
+        width: 100%;
+        height: 100%;
+      }
+      .banner .carousel-indicators [data-bs-target] {
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        margin-right: 12px;
+      }
+
+      /* main 中间 */
+      .main {
+        position: relative;
+      }
+      .main .row > * {
+        padding: 0;
+        margin: 0;
+      }
+      .main a {
+        text-decoration: none;
+        cursor: pointer;
+        color: #494949;
+      }
+      .main ul,
+      li {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      .left ul {
+        width: 100%;
+        background-color: #f4f4f4;
+        margin-bottom: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 100px;
+      }
+      .left li {
+        width: 85%;
+        border: 1px solid #ebebeb;
+        text-align: left;
+        height: 50px;
+        line-height: 50px;
+        color: #494949;
+        padding-left: 16px;
+      }
+      .left li .active {
+        color: #055ead;
+        background: none;
+      }
+      .left li:hover {
+        color: #055ead;
+      }
+      .left .title {
+        width: 100%;
+        height: 80px;
+        line-height: 80px;
+        background: url(../assets/images/nav_bj.jpg) no-repeat center;
+        text-align: center;
+        font-size: 22px;
+        color: #f2f1f1;
+        text-align: center;
+        padding-left: 0;
+      }
+      .left .title:hover {
+        color: #fff;
+      }
+      .main .detail {
+        margin-left: 40px;
+      }
+      .main .detail .title {
+        font-size: 18px;
+        color: #444444;
+        font-weight: bold;
+      }
+      .main .detail .right-tip {
+        font-size: 12px;
+        color: #999999;
+        display: inline-block;
+        text-align: right;
+      }
+      .main .bottom-content {
+        margin: 30px 0;
+        font-size: 16px;
+        line-height: 32px;
+        color: #494949;
+        margin-top: 15px;
+        text-align: justify;
+      }
+      .main .bottom-content .row div {
+        display: block;
+        height: 45px;
+        line-height: 45px;
+        border: 1px solid #efefef;
+        text-align: center;
+        font-size: 15px;
+        color: #333;
+        margin: 0 auto;
+        cursor: pointer;
+        margin: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container-fluid tip">
+      <div class="container-lg">欢迎访问四川航天职业技术学院官方网站！</div>
+    </div>
+    <div class="container-fluid top">
+      <div class="container">
+        <!-- Stack the columns on mobile by making one full-width and the other half-width -->
+        <div class="row justify-content-between align-self-center">
+          <div class="col-lg-8">
+            <img src="../assets/images/logo202404.png" alt="" />
+          </div>
+          <div class="col-lg-4 search">
+            <input
+              name="showkeycode"
+              id="showkeycode248560"
+              type="text"
+              class="text_01"
+            />
+            <img src="../assets/images/search.png" alt="" class="images_02" />
+          </div>
+        </div>
+        <div class="row banner">
+          <!-- 导航栏 -->
+          <!-- 导航栏 -->
+          <nav
+            class="navbar navbar-expand-lg"
+            data-bs-theme="dark"
+            style="background-color: #055ead"
+          >
+            <div class="container-fluid">
+              <div class="navbar-nav home">
+                <a
+                  class="nav-link"
+                  aria-current="page"
+                  href="../index.html"
+                  style="max-width: 133px; min-width: 100px"
+                  >首页</a
+                >
+              </div>
+
+              <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <ul class="navbar-nav w-100 d-flex justify-content-around">
+                  <li class="nav-item active">
+                    <a
+                      class="nav-link"
+                      aria-current="page"
+                      href="../schoolProfile.html"
+                      >学校概况</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      class="nav-link"
+                      aria-current="page"
+                      href="#"
+                      >教学教研</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="#"
+                      >科研在线</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="#"
+                      >院系介绍</a
+                    >
+                  </li>
+                  <li>
+                    <a class="nav-link" aria-current="page" href="#"
+                      >招生就业</a
+                    >
+                  </li>
+                  <li>
+                    <a class="nav-link" aria-current="page" href="#"
+                      >继续教育部</a
+                    >
+                  </li>
+                  <li>
+                    <a class="nav-link" aria-current="page" href="#"
+                      >学生工作</a
+                    >
+                  </li>
+                  <li>
+                    <a class="nav-link" aria-current="page" href="#"
+                      >国际工作</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+          <div
+            id="carouselExampleIndicators"
+            class="carousel slide carousel-fade"
+            data-bs-ride="carousel"
+            data-bs-interval="2000"
+            style="padding: 0; margin: 0"
+          >
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img
+                  src="../assets/images/banner1.jpg"
+                  class="d-block w-100"
+                  alt="..."
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 内容部分 -->
+    <div class="container main" style="margin-top: 30px">
+      <div class="row">
+        <div class="col-lg-2 left">
+          <ul class="">
+            <li class="title">学校概况</li>
+            <li>
+              <a href="./schoolIntroduction.html">学校简介</a>
+            </li>
+            <li>
+              <a href="./educationalPhilosophy.html">办学理念</a>
+            </li>
+            <li>
+              <a href="./institutionalSetting.html">机构设置</a>
+            </li>
+            <li>
+              <a href="./campusScenery.html">校园风景</a>
+            </li>
+            <li>
+              <a href="./trafficGuidance.html">交通引导</a>
+            </li>
+            <li>
+              <a class="active" href="./employeeOath.html">员工誓词</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-lg-10">
+          <div class="detail">
+            <div
+              class="row justify-content-between"
+              style="
+                width: 100%;
+                padding-bottom: 10px;
+                border-bottom: 1px solid #e8e8e8;
+              "
+            >
+              <div class="col-lg-4 title">员工誓词</div>
+              <div class="col-lg-4 right-tip">
+                当前位置： 首页 - 学校概况 - 员工誓词
+              </div>
+            </div>
+            <div class="row justify-content-center">
+              <div class="col-lg-10 bottom-content">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;航天员工誓词：<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;作为航天科技集团员工，我立志献身祖国航天事业；牢记神圣使命，弘扬航天精神；恪守工作职责，遵守规章制度；坚持严慎细实，做到诚勇勤和；创造一流业绩，报效伟大祖国。<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;四川航天职业技术学院教师誓词：<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我是光荣的人民教师，我庄严宣誓：忠诚党的教育事业，牢记立德树人使命，传承弘扬航天精神，为党育人，为国育才，潜心从教，恪尽职守，遵纪守法，勤学笃行；铸教师高尚人格，做学生良师益友，创一流工作业绩，为学生成长、学校发展而努力，为强国建设、民族复兴而奋斗！<br />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- footer -->
+    <div
+      class="container-fluid"
+      style="min-height: 220px; background: #055ead; margin-top: 30px"
+    >
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3" style="margin-right: 0">
+            <img
+              src="../assets/images/aaa.png"
+              alt=""
+              style="max-width: 100%; height: 220px"
+            />
+          </div>
+          <div class="col-lg-6">
+            <img
+              src="../assets/images/bbb.png"
+              alt=""
+              style="max-width: 100; height: 220px"
+            />
+          </div>
+          <div class="col-lg-3">
+            <img
+              src="../assets/images/ccc.png"
+              alt=""
+              style="max-width: 100%; height: 220px"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap demo</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      @media (min-width: 1200px) {
+        .container,
+        .container-lg,
+        .container-md,
+        .container-sm,
+        .container-xl {
+          max-width: 1200px;
+        }
+      }
+      .tip {
+        width: 100%;
+        height: 30px;
+        line-height: 30px;
+        background-color: #1c77c9;
+        font-size: 12px;
+        color: #d5e9fb;
+      }
+      .top {
+        min-height: 480px;
+        width: 100%;
+        background: url(../assets/images/top_bj.jpg) no-repeat center top;
+        overflow: hidden;
+      }
+      .top > div {
+        margin: 7px auto;
+      }
+
+      .search {
+        width: 266px;
+        height: 36px;
+        line-height: 36px;
+        background: url(../assets/images/rq_bj.png) no-repeat;
+        margin-top: 40px;
+      }
+      .search .text_01 {
+        background: #000;
+        height: 34px;
+        line-height: 34px;
+        outline: none;
+        width: 200px;
+        color: #fff;
+        font-size: 12px;
+        background-color: transparent;
+        border: none;
+        padding-left: 15px;
+        float: left;
+      }
+      .search .images_02 {
+        float: right;
+        width: 36px;
+        height: 36px;
+        margin-right: 5px;
+        outline: none;
+      }
+      /* navbar */
+      .navbar {
+        font-size: 18px;
+        text-align: center;
+        height: 50px;
+      }
+      .home {
+        font-size: 18px;
+        color: #fff;
+      }
+      .navbar-nav a:focus {
+        background: #227ed1;
+        color: #fff;
+      }
+      .active {
+        background: #227ed1;
+        color: #fff;
+      }
+      .home a:hover {
+        background: #227ed1;
+        color: #fff;
+      }
+      .navbar a {
+        color: #fff;
+      }
+      .navbar li {
+        flex: 1;
+        width: 100%;
+      }
+      .navbar li:hover {
+        background: #227ed1;
+        color: #fff;
+      }
+      .navbar li:active {
+        background: #227ed1;
+        color: #fff;
+      }
+      .navbar-expand-lg .navbar-nav .nav-link {
+        padding-right: 0;
+        padding-left: 0;
+      }
+
+      /* banner */
+      .banner {
+        margin-top: 7px;
+      }
+      .banner .carousel-inner .carousel-item {
+        height: 320px;
+      }
+      .banner .carousel-inner .carousel-item img {
+        width: 100%;
+        height: 100%;
+      }
+      .banner .carousel-indicators [data-bs-target] {
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        margin-right: 12px;
+      }
+
+      /* main 中间 */
+      .main {
+        position: relative;
+      }
+      .main .row > * {
+        padding: 0;
+        margin: 0;
+      }
+      .main a {
+        text-decoration: none;
+        cursor: pointer;
+        color: #494949;
+      }
+      .main ul,
+      li {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      .left ul {
+        width: 100%;
+        background-color: #f4f4f4;
+        margin-bottom: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 100px;
+      }
+      .left li {
+        width: 85%;
+        border: 1px solid #ebebeb;
+        text-align: left;
+        height: 50px;
+        line-height: 50px;
+        color: #494949;
+        padding-left: 16px;
+      }
+      .left li .active {
+        color: #055ead;
+        background: none;
+      }
+      .left li:hover {
+        color: #055ead;
+      }
+      .left .title {
+        width: 100%;
+        height: 80px;
+        line-height: 80px;
+        background: url(../assets/images/nav_bj.jpg) no-repeat center;
+        text-align: center;
+        font-size: 22px;
+        color: #f2f1f1;
+        text-align: center;
+        padding-left: 0;
+      }
+      .left .title:hover {
+        color: #fff;
+      }
+      .main .detail {
+        margin-left: 40px;
+      }
+      .main .detail .title {
+        font-size: 18px;
+        color: #444444;
+        font-weight: bold;
+      }
+      .main .detail .right-tip {
+        font-size: 12px;
+        color: #999999;
+        display: inline-block;
+        text-align: right;
+      }
+      .main .bottom-content {
+        margin: 30px 0;
+        font-size: 16px;
+        line-height: 32px;
+        color: #494949;
+        margin-top: 15px;
+        text-align: justify;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container-fluid tip">
+      <div class="container-lg">欢迎访问四川航天职业技术学院官方网站！</div>
+    </div>
+    <div class="container-fluid top">
+      <div class="container">
+        <!-- Stack the columns on mobile by making one full-width and the other half-width -->
+        <div class="row justify-content-between align-self-center">
+          <div class="col-lg-8">
+            <img src="../assets/images/logo202404.png" alt="" />
+          </div>
+          <div class="col-lg-4 search">
+            <input
+              name="showkeycode"
+              id="showkeycode248560"
+              type="text"
+              class="text_01"
+            />
+            <img src="../assets/images/search.png" alt="" class="images_02" />
+          </div>
+        </div>
+        <div class="row banner">
+          <!-- 导航栏 -->
+          <nav
+            class="navbar navbar-expand-lg"
+            data-bs-theme="dark"
+            style="background-color: #055ead"
+          >
+            <div class="container-fluid">
+              <div class="navbar-nav home">
+                <a
+                  class="nav-link"
+                  aria-current="page"
+                  href="../index.html"
+                  style="max-width: 133px; min-width: 100px"
+                  >首页</a
+                >
+              </div>
+
+              <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <ul class="navbar-nav w-100 d-flex justify-content-around">
+                  <li class="nav-item active">
+                    <a
+                      class="nav-link"
+                      aria-current="page"
+                      href="../schoolProfile.html"
+                      >学校概况</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      class="nav-link"
+                      aria-current="page"
+                      href="#"
+                      >教学教研</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="#"
+                      >科研在线</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="#"
+                      >院系介绍</a
+                    >
+                  </li>
+                  <li>
+                    <a class="nav-link" aria-current="page" href="#"
+                      >招生就业</a
+                    >
+                  </li>
+                  <li>
+                    <a class="nav-link" aria-current="page" href="#"
+                      >继续教育部</a
+                    >
+                  </li>
+                  <li>
+                    <a class="nav-link" aria-current="page" href="#"
+                      >学生工作</a
+                    >
+                  </li>
+                  <li>
+                    <a class="nav-link" aria-current="page" href="#"
+                      >国际工作</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+
+          <div
+            id="carouselExampleIndicators"
+            class="carousel slide carousel-fade"
+            data-bs-ride="carousel"
+            data-bs-interval="2000"
+            style="padding: 0; margin: 0"
+          >
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img
+                  src="../assets/images/banner1.jpg"
+                  class="d-block w-100"
+                  alt="..."
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 内容部分 -->
+    <div class="container main" style="margin-top: 30px">
+      <div class="row">
+        <div class="col-lg-2 left">
+          <ul class="">
+            <li class="title">学校概况</li>
+            <li>
+              <a class="active" href="./schoolIntroduction.html">学校简介</a>
+            </li>
+            <li>
+              <a href="./educationalPhilosophy.html">办学理念</a>
+            </li>
+            <li>
+              <a href="./institutionalSetting.html">机构设置</a>
+            </li>
+            <li>
+              <a href="./campusScenery.html">校园风景</a>
+            </li>
+            <li>
+              <a href="./trafficGuidance.html">交通引导</a>
+            </li>
+            <li>
+              <a href="./employeeOath.html">员工誓词</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-lg-10">
+          <div class="detail">
+            <div
+              class="row justify-content-between"
+              style="
+                width: 100%;
+                padding-bottom: 10px;
+                border-bottom: 1px solid #e8e8e8;
+              "
+            >
+              <div class="col-lg-4 title">学校简介</div>
+              <div class="col-lg-4 right-tip">
+                当前位置： 首页 - 学校概况 - 学校简介
+              </div>
+            </div>
+            <div class="row justify-content-center">
+              <div class="col-lg-10 bottom-content">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;四川航天职业技术学院是经四川省人民政府批准，教育部备案，面向全国招生的公办全日制普通高等学校，是四川省教育厅、四川省国防科工办、四川航天管理局（中国航天科技集团有限公司第七研究院）三方共建学校，也是国防军工系统在川唯一的一所公办高职院校。学校位于以航天科技和汽车工业为支柱产业的国家级成都经济技术开发区龙泉驿，并在古蜀文化名城广汉市建设新校区，形成“一校两区”的办学格局。<br />
+
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;学校依托航天优势资源，传承航天优秀文化，经过多年建设与发展，现已成为四川省首批示范性高职院校、四川省优质高职院校，并成功创建了国家高技能人才培训基地、四川省高技能人才培训基地、中国航天科技集团有限公司高技能人才培训中心、四川省国防科技工业人才培训中心，先后培养了国家级技能大师、全国技术能手、航天技术能手等近百名，被中华全国总工会授予“全国职工教育培训示范点”，被中国航天钱学森决策顾问委员会授予“钱学森英才培育基地”。<br />
+
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;学校以培养国防科技工业和地方经济社会发展需要的高素质技术技能人才为己任，积极探索职业教育规律和工学结合、产教融合人才培养模式，深化教育教学改革，依法治校，从严治教，不断提高教育教学质量和办学效益，形成了鲜明的“航天职教”特色，赢得了企业和社会的广泛认可。学校招生就业形势良好，毕业生就业率达到96%以上。与中国航天科技集团有限公司、中国航空工业集团有限公司、中国商用飞机有限责任公司等单位长期深入合作，实现人才共育、专业共建、资源共享；与多家航天企业共建的“航天装备制造产业学院”获批省级现代产业学院；成为“大飞机产教融合联盟技能人才子联盟”“大飞机产教融合联盟四川地区子联盟”的副理事长单位，“成都市航空航天产教联合体”“德阳重大技术装备制造产教联合体”“商用飞机行业产教融合共同体”等重要成员单位。<br />
+
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在开展全日制专科层次学历教育的同时，学校面向企业和社会需求，大力开展以职业技能培训、认定、竞赛交流、技艺传承等为主要形式的非学历教育服务，开展技术、工艺类科研攻关，技术革新成果孵化、应用及推广，打造复合多元的技能人才培养高地。两次获得四川省技能人才培育突出贡献奖。<br />
+
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;学校注重以航天优秀文化涵育技能人才成长，大力弘扬航天传统精神、“两弹一星”精神、载人航天精神、北斗精神、探月精神，建设航天爱国主义教育基地，开展“航天日”等系列主题文化活动，引导学生树立“国家利益高于一切”的价值观和“严慎细实”作风。学校培养的学生爱国情怀浓厚，积极上进，吃苦耐劳，作风严谨扎实，组织纪律性强，具有鲜明的航天文化烙印，深受用人单位欢迎。学校先后被授予“新时代工匠学院四川航天院区”“四川航天特色文化示范点”“党员理想信念教育基地”，获得中国航天科技集团有限公司“文明单位标兵”称号。<br />
+
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;学校的人才培养工作水平得到了教育主管部门、上级领导和社会的充分认可。国家工业和信息化部、国防科技工业局、四川省教育厅和中国航天科技集团有限公司等领导多次来校视察指导工作。国家最高科技奖获得者、中国科学院院士孙家栋为学校题词：“弘扬航天精神
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;培养优秀人才”，航天英雄杨利伟为学校题词：“发扬载人航天精神，培育航天优秀人才”。
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- footer -->
+    <div
+      class="container-fluid"
+      style="min-height: 220px; background: #055ead; margin-top: 30px"
+    >
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3" style="margin-right: 0">
+            <img
+              src="../assets/images/aaa.png"
+              alt=""
+              style="max-width: 100%; height: 220px"
+            />
+          </div>
+          <div class="col-lg-6">
+            <img
+              src="../assets/images/bbb.png"
+              alt=""
+              style="max-width: 100; height: 220px"
+            />
+          </div>
+          <div class="col-lg-3">
+            <img
+              src="../assets/images/ccc.png"
+              alt=""
+              style="max-width: 100%; height: 220px"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
